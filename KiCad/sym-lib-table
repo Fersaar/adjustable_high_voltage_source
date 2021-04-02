@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name hbruecke-rescue)(type Legacy)(uri ${KIPRJMOD}/hbruecke-rescue.lib)(options "")(descr ""))
+)
