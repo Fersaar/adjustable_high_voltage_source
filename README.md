@@ -15,7 +15,7 @@ This project was developed in the course of the [contactless electrostatic gripp
 
  Basis is a half bridge circuit with driver "FAN73912mx". This can withstand up to 1200V, but is not isolated, so all GND potentials must be connected. The rest of the circuit is based on the driver's refernce design with a bootstrap circuit to switch the mosfets. Finally, the output is filtered through an RC gate to remove the PWM signal and provide a DC voltage. The switching frequency is 20kHz. The design is certainly not optimal but it does what it should and is perfectly adequate for the application.
 
-![Circuit](Images/circuit.jpg)
+![Circuit](Images/circuit.JPG)
 ## PCB
 
 The finished circuit board is made so that several can be stacked on top of each other and the supply lines can be looped through. 
