@@ -1,25 +1,24 @@
 # adjustable_high_voltage_source
-This project was developed in the course of the [contactless electrostatic grippers](https://github.com/Fersaar/contactless_electrostatic_gripper). In order to be able to control the individual gripper zones, it must be possible to supply them with a variable voltage between 0V and 1000V. The necessary current is almost zero, since only the individual gripper electodes have to be charged. In the later gripper design, the circuit sits between the microcontroller and the gripper. 
+This project was developed as part of the [contactless electrostatic grippers](https://github.com/Fersaar/contactless_electrostatic_gripper) project. To control the individual gripper zones, it is essential to supply them with a variable voltage ranging from 0V to 1000V. The required current is minimal, as only the individual gripper electrodes need to be charged. In the final gripper design, this circuit will be positioned between the microcontroller and the gripper.
 
 ## Requirements
 
-- Variable voltage between 0 and 1000V
-- external supply with 1000V DC
-- linear voltage regulation
+- Variable output voltage between 0V and 1000V
+- External supply of 1000V DC
+- Linear voltage regulation
 - Input: PWM signal with 3.3V and variable duty cycle
-- cut-off frequency 1kHz
-- as cheap and simple as possible
+- Cut-off frequency of 1kHz
+- As cost-effective and straightforward as possible
 
 
 ## Design
 
- Basis is a half bridge circuit with driver "FAN73912mx". This can withstand up to 1200V, but is not isolated, so all GND potentials must be connected. The rest of the circuit is based on the driver's refernce design with a bootstrap circuit to switch the mosfets. Finally, the output is filtered through an RC gate to remove the PWM signal and provide a DC voltage. The switching frequency is 20kHz. The design is certainly not optimal but it does what it should and is perfectly adequate for the application.
+The core of the design is a half-bridge circuit utilizing the "FAN73912mx" driver, which can withstand voltages up to 1200V. However, it is not isolated, so all ground potentials must be interconnected. The circuit design follows the reference layout provided by the driver, incorporating a bootstrap circuit to switch the MOSFETs. The output is filtered through an RC gate to eliminate the PWM signal and provide a stable DC voltage. The switching frequency is set at 20kHz. While the design may not be optimal, it effectively meets the application’s requirements.
 
 ![Circuit](Images/circuit.JPG)
 ## PCB
 
-The finished circuit board is made so that several can be stacked on top of each other and the supply lines can be looped through. 
- 
+The completed circuit board is designed to allow multiple units to be stacked vertically, with supply lines that can be easily looped through.
 
 | | |
 |--|---|
@@ -27,9 +26,9 @@ The finished circuit board is made so that several can be stacked on top of each
 | single half bridge|stacked half bridges |
 
 
-The quiescent current is about 3 mA at 1000V and 20 kHz. The minimum voltage resolution depends on the PWM resolution and is e.g. with a 12 bit signal about 0.244 V.
+The quiescent current at 1000V and 20kHz is approximately 3 mA. The minimum voltage resolution is determined by the PWM resolution; for instance, with a 12-bit signal, the resolution is about 0.244V.
 
-The voltage can be controlled linearly as desired:
+The voltage can be controlled linearly as desired: 
 ![Voltage_over_PWM](Images/voltage_pwm.png)
 
 ### BOM
